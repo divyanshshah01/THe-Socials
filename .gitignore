@@ -1,0 +1,24 @@
+# Environment and local configs
+.env
+.env.local
+.env.*.local
+config.php
+
+# User uploads & cache
+uploads/*
+!uploads/.gitkeep
+
+# Operating System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE / Editor directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
+error_log

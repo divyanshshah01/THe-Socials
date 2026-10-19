@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Log in to The Socials — Access your clubs and community dashboard." />
+
+  <title>Login — The Socials</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=1.0.2" />
+</head>
+
+<body class="auth-page">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       AUTH LAYOUT — Centered login card
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="auth">
+
+    <!-- ─── Header / Brand ───────────────────────────────────── -->
+    <a href="index.html" class="auth__brand">
+      <div class="auth__logo"><img src="logo.jpg" alt="The Socials Logo" class="logo-img" /></div>
+      <span class="auth__brand-name">The Socials</span>
+    </a>
+
+    <!-- ─── Login Card ───────────────────────────────────────── -->
+    <div class="auth-card">
+
+      <div class="auth-card__header">
+        <h1 class="auth-card__title">Welcome Back</h1>
+        <p class="auth-card__desc">Sign in to access your community</p>
+      </div>
+
+      <form class="auth-form" id="login-form" autocomplete="off">
+
+        <!-- Email -->
+        <div class="auth-form__group">
+          <label class="auth-form__label" for="login-email">Email Address</label>
+          <input
+            type="email"
+            class="auth-form__input"
+            id="login-email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="auth-form__group">
+          <label class="auth-form__label" for="login-password">Password</label>
+          <input
+            type="password"
+            class="auth-form__input"
+            id="login-password"
+            name="password"
+            placeholder="Enter your password"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="auth-form__btn" id="login-btn">
+          <span class="auth-form__btn-label">Sign In</span>
+          <span class="auth-form__btn-spinner"></span>
+        </button>
+
+      </form>
+
+      <!-- Status feedback toast -->
+      <div class="auth-toast" id="auth-toast"></div>
+
+      <!-- Footer Link -->
+      <p class="auth-card__footer">
+        Don't have an account? <a href="register.html" class="auth-card__link">Register</a>
+      </p>
+
+    </div>
+    <!-- /auth-card -->
+
+    <!-- ─── Page Footer ──────────────────────────────────────── -->
+    <p class="auth__footer">
+      &copy; 2026 <a href="index.html">The Socials</a> &mdash; All rights reserved.
+    </p>
+
+  </div>
+  <!-- /auth -->
+
+  <!-- Auth JS -->
+  <script src="auth.js"></script>
+
+</body>
+</html>

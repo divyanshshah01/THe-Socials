@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Register for The Socials — Create your account and join an exclusive community with your invitation code." />
+
+  <title>Register — The Socials</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=1.0.2" />
+</head>
+
+<body class="auth-page">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       AUTH LAYOUT — Centered registration card
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="auth">
+
+    <!-- ─── Header / Brand ───────────────────────────────────── -->
+    <a href="index.html" class="auth__brand">
+      <div class="auth__logo"><img src="logo.jpg" alt="The Socials Logo" class="logo-img" /></div>
+      <span class="auth__brand-name">The Socials</span>
+    </a>
+
+    <!-- ─── Registration Card ────────────────────────────────── -->
+    <div class="auth-card">
+
+      <div class="auth-card__header">
+        <h1 class="auth-card__title">Create Your Account</h1>
+        <p class="auth-card__desc">Join the community and unlock your circle</p>
+      </div>
+
+      <form class="auth-form" id="register-form" autocomplete="off">
+
+        <!-- Full Name -->
+        <div class="auth-form__group">
+          <label class="auth-form__label" for="reg-name">Full Name</label>
+          <input
+            type="text"
+            class="auth-form__input"
+            id="reg-name"
+            name="full_name"
+            placeholder="John Doe"
+            required
+            autocomplete="name"
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="auth-form__group">
+          <label class="auth-form__label" for="reg-email">Email Address</label>
+          <input
+            type="email"
+            class="auth-form__input"
+            id="reg-email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="auth-form__group">
+          <label class="auth-form__label" for="reg-password">Password</label>
+          <input
+            type="password"
+            class="auth-form__input"
+            id="reg-password"
+            name="password"
+            placeholder="Min. 8 characters"
+            required
+            minlength="8"
+            autocomplete="new-password"
+          />
+        </div>
+
+        <!-- Divider -->
+        <div class="auth-form__divider">
+          <span>Your Invitation</span>
+        </div>
+
+        <!-- Join Code (Prominent) -->
+        <div class="auth-form__group auth-form__group--featured">
+          <label class="auth-form__label auth-form__label--featured" for="reg-join-code">
+            <!-- Key Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+            </svg>
+            Club Join Code <span style="font-size: 0.65rem; opacity: 0.7; font-weight: normal; margin-left: 4px;">(Optional)</span>
+          </label>
+          <input
+            type="text"
+            class="auth-form__input auth-form__input--featured"
+            id="reg-join-code"
+            name="join_code"
+            placeholder="e.g. SOCIALS-2026"
+            spellcheck="false"
+            autocomplete="off"
+          />
+          <p class="auth-form__hint">Optional: Enter a code to join a club immediately</p>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="auth-form__btn" id="register-btn">
+          <span class="auth-form__btn-label">Create Account</span>
+          <span class="auth-form__btn-spinner"></span>
+        </button>
+
+      </form>
+
+      <!-- Status feedback toast -->
+      <div class="auth-toast" id="auth-toast"></div>
+
+      <!-- Footer Link -->
+      <p class="auth-card__footer">
+        Already a member? <a href="login.html" class="auth-card__link">Log in</a>
+      </p>
+
+    </div>
+    <!-- /auth-card -->
+
+    <!-- ─── Page Footer ──────────────────────────────────────── -->
+    <p class="auth__footer">
+      &copy; 2026 <a href="index.html">The Socials</a> &mdash; All rights reserved.
+    </p>
+
+  </div>
+  <!-- /auth -->
+
+  <!-- Auth JS -->
+  <script src="auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Socials — An exclusive community membership platform. Enter your join code to access curated clubs and connect with like-minded individuals." />
+
+  <title>The Socials — Join the Community</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=1.0.2" />
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3D CANVAS — Background layer for Three.js
+       ═══════════════════════════════════════════════════════════ -->
+  <canvas id="bg"></canvas>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       UI OVERLAY LAYER — All visible content floats above canvas
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="ui-layer">
+
+    <!-- ─── Navigation ──────────────────────────────────────── -->
+    <nav class="nav" id="navbar">
+      <a href="#" class="nav__brand">
+        <div class="nav__logo"><img src="logo.jpg" alt="The Socials Logo" class="logo-img" /></div>
+        <span class="nav__name">The Socials</span>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#hero" class="nav__link">Home</a></li>
+        <li><a href="#join" class="nav__link">Join</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="register.html" class="nav__link nav__link--accent">Register</a></li>
+        <li><a href="login.html" class="nav__btn">Login</a></li>
+      </ul>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+
+    <!-- ─── Hero Section ────────────────────────────────────── -->
+    <section class="hero" id="hero">
+
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Accepting New Members
+      </div>
+
+      <h1 class="hero__title">
+        Welcome to<br /><em>The Socials</em>
+      </h1>
+
+      <p class="hero__subtitle">
+        A curated community for those who value authentic connection. 
+        Enter your invitation code below to unlock your membership.
+      </p>
+
+      <div class="hero__divider"></div>
+
+
+      <!-- ─── Join Card (Glassmorphism) ───────────────────── -->
+      <div class="join-card" id="join">
+        <div class="join-card__header">
+          <div class="join-card__icon">
+            <!-- Key SVG Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" 
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+            </svg>
+          </div>
+          <h2 class="join-card__title">Join The Club</h2>
+          <p class="join-card__desc">Enter your exclusive invitation code</p>
+        </div>
+
+        <form class="join-form" id="join-form" autocomplete="off">
+          <div class="form-group">
+            <label class="form-group__label" for="join-code">Invitation Code</label>
+            <input
+              type="text"
+              class="form-group__input"
+              id="join-code"
+              name="join_code"
+              placeholder="e.g. SOCIALS-2026"
+              required
+              spellcheck="false"
+              autocomplete="off"
+            />
+          </div>
+
+          <button type="submit" class="btn" id="join-btn">
+            <span class="btn__label">Enter The Vault</span>
+            <span class="btn__spinner"></span>
+          </button>
+        </form>
+
+        <!-- Status feedback toast -->
+        <div class="status-toast" id="status-toast"></div>
+      </div>
+      <!-- /join-card -->
+
+
+      <!-- ─── Scroll Indicator ────────────────────────────── -->
+      <div class="scroll-hint">
+        <div class="scroll-hint__mouse">
+          <div class="scroll-hint__dot"></div>
+        </div>
+        Scroll to explore
+      </div>
+
+    </section>
+    <!-- /hero -->
+
+
+    <!-- ─── Footer ──────────────────────────────────────────── -->
+    <footer class="footer">
+      &copy; 2026 <a href="#">The Socials</a> &mdash; All rights reserved.
+    </footer>
+
+  </div>
+  <!-- /ui-layer -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCROLL SPACER — Drives the GSAP ScrollTrigger camera depth
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="scroll-spacer" style="height: 300vh; pointer-events: none;"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MANIFESTO — Post-scroll content section
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="manifesto" id="about">
+    <div class="manifesto__inner">
+
+      <div class="manifesto__quote">
+        <svg class="manifesto__quote-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
+          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+        </svg>
+        <blockquote class="manifesto__blockquote">
+          Alone, we chase moments. Together, we build a story.
+        </blockquote>
+      </div>
+
+      <div class="manifesto__divider"></div>
+
+      <p class="manifesto__text">
+        Every great connection starts with a room worth walking into. Clubs aren't just spaces &mdash; they're where strangers become familiar faces, ideas turn into movements, and belonging becomes a habit. At <strong>The Socials</strong>, we believe the best communities aren't found, they're joined &mdash; and every premium club here is a door to people who already get you.
+      </p>
+
+      <a href="register.html" class="manifesto__cta">
+        Join Your Community
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ─── Final Footer ──────────────────────────────────────── -->
+  <footer class="manifesto__footer">
+    &copy; 2026 <a href="#">The Socials</a> &mdash; All rights reserved.
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS — Three.js + GSAP + App Logic
+       ═══════════════════════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
